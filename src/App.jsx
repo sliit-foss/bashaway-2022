@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import logo from '../public/assets/logo.svg'
+import { Header } from './components/common'
 import { Footer } from './components/common'
 import { Register, Sponsors, Speakers, Prizes } from './components'
 import './styles/App.css'
@@ -9,6 +10,7 @@ function App() {
 
   return (
     <div className="App font-inter">
+      <Header/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
