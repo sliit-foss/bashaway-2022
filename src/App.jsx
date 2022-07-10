@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import logo from '../public/assets/logo.svg'
 import { Footer } from './components/common'
-import { Register } from './components'
+import { Register, Sponsors, Speakers } from './components'
 import './styles/App.css'
-import Sponsors from './components/sponsors'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +40,7 @@ function App() {
           </a>
         </p>
       </header>
+      <Speakers/>
       <Sponsors/>
       <Register />
       <Footer />
