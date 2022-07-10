@@ -1,3 +1,5 @@
+import Divider from "./divider"
+
 const Footer = () => {
 
     const socialLinks = [
@@ -66,7 +68,7 @@ const Footer = () => {
                     ))}
                 </div>
             </div>
-            <div className="w-full h-0.5 bg-nav-links-unselected" />
+            <Divider/>
             <div className="bg-black flex flex-col md:flex-row justify-start md:justify-between text-nav-links-unselected pt-5 pb-6 px-10 md:px-24">
                 <span className="text-left">Copyright © 2022 SLIIT FOSS Community</span>
                 <div className="flex justify-start items-center mt-4 md:mt-0">
