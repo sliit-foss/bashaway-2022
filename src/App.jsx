@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import logo from './public/logo.svg'
+import { Footer } from './components/common'
 import './styles/App.css'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
+    <div className="App font-inter">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>Hello Vite + React!</p>
@@ -38,6 +39,7 @@ function App() {
           </a>
         </p>
       </header>
+      <Footer />
     </div>
   )
 }
