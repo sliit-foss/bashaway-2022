@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import logo from '../public/assets/logo.svg'
 import { Footer } from './components/common'
-import { Register, Sponsors, Speakers } from './components'
+import { Register, Sponsors, Speakers, Prizes } from './components'
 import './styles/App.css'
 
 function App() {
@@ -40,8 +40,9 @@ function App() {
           </a>
         </p>
       </header>
-      <Speakers/>
-      <Sponsors/>
+      <Prizes />
+      <Speakers />
+      <Sponsors />
       <Register />
       <Footer />
     </div>
