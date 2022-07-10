@@ -15,3 +15,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.light-sweep::before {
+  content: attr(data-heading);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255) 100% );
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: light-sweep 2.5s ease-in-out infinite;
+  background-size: 200%;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+@keyframes light-sweep {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}

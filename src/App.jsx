@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import logo from '../public/assets/logo.svg'
 import { Footer } from './components/common'
+import { Register } from './components'
 import './styles/App.css'
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           </a>
         </p>
       </header>
+      <Register />
       <Footer />
     </div>
   )
