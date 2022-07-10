@@ -46,14 +46,14 @@ const Footer = () => {
         <>
             <div className="flex flex-col md:flex-row justify-between bg-black p-10 md:p-12">
                 <div className="w-full md:w-5/12 pl-0 md:pl-12">
-                    <a href="https://sliitfoss.org" target="_blank"><img src='/src/public/foss-logo.svg' className="w-28 h-28" /></a>
+                    <a href="https://sliitfoss.org" target="_blank"><img src='/assets/foss-logo.svg' className="w-28 h-28" /></a>
                 </div>
                 <div className="w-full md:w-6/12 flex flex-col justify-start items-start mt-6">
                     <h1 className="text-white text-2xl font-semibold mb-8">Contact</h1>
                     <a className="text-nav-links-unselected hover:text-primary mb-4 transition duration-300" href="mailto:sllitfoss@gmail.com" target="_blank">sllitfoss@gmail.com</a>
                     <div className="flex justify-start mb-8">
                         {socialLinks.map(link => (
-                            <a href={link.url} target="_blank"><img src={`/src/public/social/${link.icon}.svg`} className="w-5 h-5 mr-4 fill-current hover:brightness-200 transition duration-300"></img></a>
+                            <a href={link.url} target="_blank"><img src={`/assets/social/${link.icon}.svg`} className="w-5 h-5 mr-4 fill-current hover:brightness-200 transition duration-300"></img></a>
                         ))}
                     </div>
                     <h1 className="text-white text-2xl font-semibold mb-4">Visit Us On</h1>
@@ -71,7 +71,7 @@ const Footer = () => {
                 <span className="text-left">Copyright © 2022 SLIIT FOSS Community</span>
                 <div className="flex justify-start items-center mt-4 md:mt-0">
                     <span className="mr-3">Visit us On</span>
-                    <a href="https://github.com/sliit-foss" target="_blank"><img src={`/src/public/social/github.svg`} className="w-5 h-5 mb-0.5 hover:brightness-200 transition duration-300"></img></a>
+                    <a href="https://github.com/sliit-foss" target="_blank"><img src={`/assets/social/github.svg`} className="w-5 h-5 mb-0.5 hover:brightness-200 transition duration-300"></img></a>
                 </div>
             </div>
         </>
