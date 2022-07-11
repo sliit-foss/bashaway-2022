@@ -2090,6 +2090,11 @@ v8-compile-cache@^2.0.3:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.3.0.tgz#2de19618c66dc247dcfb6f99338035d8245a2cee"
   integrity sha512-l8lCEmLcLYZh4nbunNZvQCJc5pv7+RCwa8q/LdUx8u7lsWvPDKmpodJAJNwkAhJC//dFY48KuIEmjtd4RViDrA==
 
+vanta@^0.5.22:
+  version "0.5.22"
+  resolved "https://registry.yarnpkg.com/vanta/-/vanta-0.5.22.tgz#92290e4ebac0b7c0d4822a4316d03ccd6bf33779"
+  integrity sha512-Y58U1SjHU6HeIuwq+te7eonyi7LWzKqyPDjZyQ7Kb6Zy4ampNJHRIUZvf1Pwl6uTC6Qi6P9fUYDsUVQDHq0KKg==
+
 vite@^2.9.9:
   version "2.9.14"
   resolved "https://registry.yarnpkg.com/vite/-/vite-2.9.14.tgz#c438324c6594afd1050df3777da981dee988bb1b"
