@@ -31,7 +31,7 @@ const Speakers = () => {
             <div className="flex flex-wrap justify-center items-center">
                 {
                     speakerList.map((speaker) => {
-                        return <Speaker name={speaker.name} position={speaker.position} image={speaker.image} />
+                        return <Speaker key={speaker.name} name={speaker.name} position={speaker.position} image={speaker.image} />
                     })
                 }
             </div>

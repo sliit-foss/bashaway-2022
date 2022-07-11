@@ -41,7 +41,7 @@ const Prizes = () => {
             <span className="text-white text-xl font-semibold text-center mt-8 mb-6">{name}</span>
             {
                 details.map((detail) => {
-                    return <span className="text-nav-links-unselected text-center mb-2">{detail}</span>
+                    return <span key={detail} className="text-nav-links-unselected text-center mb-2">{detail}</span>
                 })
             }
         </div>)
@@ -52,7 +52,7 @@ const Prizes = () => {
             <div className="flex flex-wrap justify-center items-center">
                 {
                     prizeList.map((prize) => {
-                        return <Prize name={prize.name} details={prize.details} image={prize.image} />
+                        return <Prize key={prize} name={prize.name} details={prize.details} image={prize.image} />
                     })
                 }
             </div>

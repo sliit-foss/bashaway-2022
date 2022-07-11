@@ -15,15 +15,15 @@ const Sponsors = () => {
             <div className="flex flex-wrap justify-center items-center gap-y-12">
                 {
                     ['Star', 'Rectangle', 'Ellipse'].map((logo) => {
-                        return <Sponsor logo={logo} classes="w-24 h-24 md:w-[8rem] md:h-[8rem] p-8 mx-6"/>
+                        return <Sponsor key={logo} logo={logo} classes="w-24 h-24 md:w-[8rem] md:h-[8rem] p-10 mx-6"/>
                     })
                 }
             </div>
             <span className="text-xl text-white font-semibold my-16 mb-12">Silver</span>
             <div className="flex flex-wrap justify-center items-center gap-y-12  mb-12">
                 {
-                    ['Triangle', 'Triangle', 'Triangle','Triangle', 'Triangle', 'Triangle', 'Triangle'].map((logo) => {
-                        return <Sponsor logo={logo} classes="w-16 h-16 md:w-[6rem] md:h-[6rem] p-5 mx-6"/>
+                    ['Triangle', 'Triangle', 'Triangle','Triangle', 'Triangle', 'Triangle', 'Triangle'].map((logo, index) => {
+                        return <Sponsor key={index} logo={logo} classes="w-16 h-16 md:w-[6rem] md:h-[6rem] p-5 mx-6"/>
                     })
                 }
             </div>
