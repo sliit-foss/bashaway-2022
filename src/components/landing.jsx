@@ -17,10 +17,13 @@ const Landing = () => {
             <div className="w-full flex justify-center absolute bottom-48 z-40">
                 <a href="https://sliitfoss.org" target="_blank"><img src='/assets/foss-logo.svg' className="w-28 h-28" /></a>
             </div>
-            <div className="w-full absolute bottom-0 z-40 transition duration-300" id="register">
-                <Register />
+            <div className="w-full flex justify-center absolute bottom-[22rem] md:bottom-48 z-20 opacity-2">
+                <img src='/assets/landing.svg' className="w-10/12 md:w-6/12" />
             </div>
-            <div className="w-full h-full bg-gradient-radial from-primary via-[#001630] to-transparent opacity-40 absolute top-0 left-0"/>
+            <div className="w-full absolute bottom-0 z-40 transition duration-300" id="register">
+                <Register showDivider={false}/>
+            </div>
+            <div className="w-full h-full bg-gradient-radial from-primary via-[#001630] to-transparent opacity-30 absolute top-0 left-0"/>
         </div>
     )
 

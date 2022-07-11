@@ -19,6 +19,9 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      opacity: {
+        2: '0.02',
       }
     },
   },
