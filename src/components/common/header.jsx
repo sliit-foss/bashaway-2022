@@ -63,14 +63,6 @@ const Header = () => {
     return (
         <div>
             <div className="flex flex-col md:flex-row justify-between bg-black p-2 md:p-2">
-                <img
-                    data-aos="fade-down"
-                    data-aos-duration="1000"
-                    data-aos-offset="100"
-                    src="fazidlogo.png"
-                    alt=""
-                    className="relative h-8 ml-6 2xl:h-12 2xl:w-12"
-                />
 
                 <div>
                     <nav className='flex items-center z-50'>
@@ -85,16 +77,18 @@ const Header = () => {
                         <ul
                             className={
                                 burgerNav
-                                    ? "flex-col flex items-center fixed inset-0 bottom-1/2 uppercase bg-[#58dfc3]/10 backdrop-blur-lg gap-4 justify-center p-8 md:hidden  "
+                                    ? "navbar-nav mr-auto flex-col flex items-center fixed inset-0 bottom-1/2 uppercase bg-[#58dfc3]/10 backdrop-blur-lg gap-4 justify-center p-8 md:hidden  "
                                     : "hidden"
                             }
                         >
-
                             <AiOutlineClose
                                 onClick={burgerNavController}
                                 className=" h-8 w-8 text-[#ffffff] font-extrabold z-30"
                             />
                             <li>
+                                <div className="w-full md:w-5/12 pl-0 md:pl-12 md:pt-3">
+                                    <img src='/assets/bashaway-logo.svg' className="w-30 h-30" />
+                                </div>
                                 {
                                     navItems.map((item) => {
                                         return <div className="col col-span-20 md:pt-3">
@@ -108,26 +102,26 @@ const Header = () => {
                     </nav>
                 </div>
 
-                <div className="w-full md:w-5/12 pl-0 md:pl-12 md:pt-3">
-                    <img src='/assets/bashaway-logo.svg' className="w-30 h-30" />
+                {/* <div className="hidden md:flex "> */}
+                    <div className=" w-full md:w-5/12 pl-0 md:pl-12 md:pt-3">
+                        <img src='/assets/bashaway-logo.svg' className="hidden md:flex w-30 h-30" />
+                    </div>
+                    {
+                        navItems.map((item) => {
+                            return <div className="col col-span-20 md:pt-3">
+                                <a className="hidden md:flex text-nav-links-unselected hover:text-primary mb-3 transition duration-300" href="" target="_blank">{item.name}</a>
+                            </div>
+                        })
+                    }
+                    <div className="col col-span-20 md:pt-2 pr-10 ">
+                        <button class="hidden md:flex py-1 px-4 bg-white hover:text-primary mb-3 transition duration-300 font-semibold rounded-lg" href="" target="_blank">
+                            Register
+                        </button>
+                    </div>
                 </div>
-                {
-                    navItems.map((item) => {
-                        return <div className="col col-span-20 md:pt-3">
-                            <a className="text-nav-links-unselected hover:text-primary mb-3 transition duration-300" href="" target="_blank">{item.name}</a>
-                        </div>
-                    })
-                }
-                <div className="col col-span-20 md:pt-2 pr-10 ">
-                    <button class=" py-1 px-4 bg-white hover:text-primary mb-3 transition duration-300 font-semibold rounded-lg" href="" target="_blank">
-                        Register
-                    </button>
-                </div>
-
-            </div>
-            <div className="w-full h-[0.25px] bg bg-nav-links-unselected opacity-20"></div>
+                <div className="hidden md:flex w-full h-[0.25px] bg bg-nav-links-unselected opacity-20"></div>
+            {/* </div> */}
         </div>
-
     )
 }
 
