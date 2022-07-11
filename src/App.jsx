@@ -1,17 +1,27 @@
-import { Footer } from './components/common'
-import { Register, Sponsors, Speakers, Prizes, Rules } from './components'
-import './styles/App.css'
+import { useEffect } from 'react'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { Header, Footer, Layout } from './components/common'
+import { Register, Sponsors, Speakers, Prizes, Rules, Timeline } from './components'
 
 function App() {
+
+  useEffect(() => {
+    Aos.init({ offset: 0, duration: 1500 })
+    window.addEventListener('load', Aos.refresh)
+  }, [])
+
   return (
-    <div className="App font-inter">
-      <Rules/>
+    <Layout>
+      <Header />
+      <Timeline />
+      <Rules />
       <Prizes />
       <Speakers />
       <Sponsors />
       <Register />
       <Footer />
-    </div>
+    </Layout>
   )
 }
 
