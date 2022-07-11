@@ -35,7 +35,7 @@ const Header = () => {
 
     return (
         <div>
-            <div className="flex flex-row md:flex-row justify-between bg-black p-2 md:p-2">
+            <div className="flex flex-row md:flex-row justify-between bg-black/70 p-2 md:p-2 w-full fixed top-0 z-50 backdrop-blur-[5px]">
                 <div className="w-full md:w-5/12 pl-0 md:pl-12 md:pt-3">
                     <img src='/assets/bashaway-logo.svg' className="w-30 h-30" />
                 </div>

@@ -16,6 +16,12 @@ module.exports = {
       },
       scale: {
         85: '0.85',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
+      opacity: {
+        2: '0.02',
       }
     },
   },
