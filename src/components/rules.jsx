@@ -4,9 +4,9 @@ const Rules = () => {
   return (
     <div class="bg-black w-full flex flex-col justify-center items-center text-white">
       <Title title="Rules & Regulations"/>
-      <div className="col-span-12 grid grid-cols-12 gap-3 border mt-16 m-10 mx-8 md:mx-20 xl:mx-32">
-        <div className="col-span-12 m-3 lg:col-span-6 bg-red-400">
-          <img src={"/assets/RulesNRegulations/RulesRegImg.jpg"} class="h-full bg-cover object-cover w-full filter grayscale" />
+      <div className="col-span-12 grid grid-cols-12 gap-3 border mt-16 m-10 mx-8 md:mx-20 xl:mx-32 rounded">
+        <div className="col-span-12 m-3 lg:col-span-6">
+          <img src={"/assets/RulesNRegulations/RulesRegImg.jpg"} class="h-full bg-cover object-cover w-full filter grayscale rounded" />
         </div>
         <div className="col-span-12 m-6 lg:col-span-6 px-4">
             <ul class="list-disc text-nav-links-unselected">
