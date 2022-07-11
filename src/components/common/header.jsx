@@ -1,5 +1,6 @@
 import { TiThMenu } from "react-icons/ti";
 import React, { useEffect, useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from 'react-icons/gi'
 // import AOS from "aos";
 // import "aos/dist/aos.css";
@@ -9,9 +10,24 @@ const Header = () => {
     const [show, setShow] = useState(false);
     const [burgerNav, setBurgerNav] = useState(false);
 
+    const transitionNav = () => {
+        if (window.scrollY > 200) {
+            setShow(true);
+        } else {
+            setShow(false);
+        }
+    };
+
     function burgerNavController() {
         setBurgerNav(!burgerNav);
     }
+
+    useEffect(() => {
+        window.addEventListener("scroll", transitionNav);
+
+        //remove
+        return () => window.removeEventListener("scroll", transitionNav);
+    }, []);
 
     const navItems = [
         {
@@ -46,7 +62,15 @@ const Header = () => {
 
     return (
         <div>
-            <div className="flex flex-row md:flex-row justify-between bg-black p-2 md:p-2">
+            <div className="flex flex-col md:flex-row justify-between bg-black p-2 md:p-2">
+                <img
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-offset="100"
+                    src="fazidlogo.png"
+                    alt=""
+                    className="relative h-8 ml-6 2xl:h-12 2xl:w-12"
+                />
 
                 <div>
                     <nav className='flex items-center z-50'>
@@ -54,18 +78,33 @@ const Header = () => {
                             data-aos="fade-down"
                             data-aos-duration="1000"
                             data-aos-offset="100"
-                            className="absolute h-8 w-8 text-[#ffffff] right-3 md:hidden mt-5"
+                            className="absolute h-8 w-8 text-[#ffffff] right-3 md:hidden mt-3"
                             onClick={burgerNavController}
                         />
 
                         <ul
-                            data-aos="fade-down"
-                            data-aos-duration="1000"
-                            data-aos-offset="100"
-                            className="hidden md:flex "
+                            className={
+                                burgerNav
+                                    ? "flex-col flex items-center fixed inset-0 bottom-1/2 uppercase bg-[#58dfc3]/10 backdrop-blur-lg gap-4 justify-center p-8 md:hidden  "
+                                    : "hidden"
+                            }
                         >
-                        </ul>
 
+                            <AiOutlineClose
+                                onClick={burgerNavController}
+                                className=" h-8 w-8 text-[#ffffff] font-extrabold z-30"
+                            />
+                            <li>
+                                {
+                                    navItems.map((item) => {
+                                        return <div className="col col-span-20 md:pt-3">
+                                            <a className="text-nav-links-unselected hover:text-primary mb-3 transition duration-300" href="" target="_blank">{item.name}</a>
+                                        </div>
+                                    })
+                                }
+                            </li>
+
+                        </ul>
                     </nav>
                 </div>
 
