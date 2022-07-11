@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { Header, Footer, Layout } from './components/common'
-import { Register, Sponsors, Speakers, Prizes , Timeline} from './components'
+import { Register, Sponsors, Speakers, Prizes, Rules, Timeline } from './components'
 
 function App() {
 
@@ -13,8 +13,9 @@ function App() {
 
   return (
     <Layout>
-      <Header/>
+      <Header />
       <Timeline />
+      <Rules />
       <Prizes />
       <Speakers />
       <Sponsors />
