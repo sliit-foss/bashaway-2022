@@ -1,6 +1,31 @@
-import { GiHamburgerMenu } from 'react-icons/gi'
+import { TiThMenu } from "react-icons/ti";
+import React, { useEffect, useState } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Header = () => {
+    const [show, setShow] = useState(false);
+    const [burgerNav, setBurgerNav] = useState(false);
+
+    const transitionNav = () => {
+        if (window.scrollY > 200) {
+            setShow(true);
+        } else {
+            setShow(false);
+        }
+    };
+
+    function burgerNavController() {
+        setBurgerNav(!burgerNav);
+    }
+
+    useEffect(() => {
+        window.addEventListener("scroll", transitionNav);
+
+        //remove
+        return () => window.removeEventListener("scroll", transitionNav);
+    }, []);
 
     const navItems = [
         {
@@ -35,27 +60,60 @@ const Header = () => {
 
     return (
         <div>
-            <div className="flex flex-row md:flex-row justify-between bg-black/70 p-2 md:p-2 w-full fixed top-0 z-50 backdrop-blur-[5px]">
-                <div className="w-full md:w-5/12 pl-0 md:pl-12 md:pt-3">
-                    <img src='/assets/bashaway-logo.svg' className="w-30 h-30" />
-                </div>
-                {
-                    navItems.map((item) => {
-                        return <div className="col col-span-20 md:pt-3">
-                            <a className="text-nav-links-unselected hover:text-primary mb-3 transition duration-300" href="" target="_blank">{item.name}</a>
-                        </div>
-                    })
-                }
-                <div className="col col-span-20 md:pt-2 pr-10 ">
-                    <button class=" py-1 px-4 bg-white hover:text-primary mb-3 transition duration-300 font-semibold rounded-lg" href="" target="_blank">
-                        Register
-                    </button>
+            <div className="flex flex-col md:flex-row justify-between bg-black p-2 md:p-2">
+                <div>
+                    <nav className='flex items-center z-80 px-3 py-3'>
+                        <TiThMenu
+                            data-aos="fade-down"
+                            data-aos-duration="1000"
+                            data-aos-offset="100"
+                            className="absolute h-8 w-8 text-[#ffffff] right-3 lg:hidden mt-2 mr-2"
+                            onClick={burgerNavController}
+                        />
+
+                        <ul
+                            className={
+                                burgerNav
+                                    ? "navbar-nav mr-auto flex-col flex items-center fixed inset-0 lg:bottom-full uppercase bg-black backdrop-blur-3xl gap-4 justify-center p-8 lg:hidden z-50 mt-11"
+                                    : "hidden"
+                            } 
+                        >
+                            <li>
+                                <div className="w-full">
+                                    <img src='/assets/bashaway-logo.svg' className="w-40 h-40" />
+                                </div>
+                                {
+                                    navItems.map((item) => {
+                                        return <div className="col col-span-20 pb-10">
+                                            <a className="text-white hover:text-primary mb-3 md:py-10 transition duration-300" href="" target="_blank">{item.name}</a>
+                                        </div>
+                                    })
+                                }
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 
+                <div className="hidden lg:flex justify-between w-full">
+                    <div className=" w-full md:w-5/12 pl-0 md:pl-12 md:pt-3">
+                        <img src='/assets/bashaway-logo.svg' className="w-30 h-30" />
+                    </div>
+                    {
+                        navItems.map((item) => {
+                            return <div className="col col-span-20 md:pt-3">
+                                <a className="px-2 text-nav-links-unselected hover:text-primary mb-3 transition duration-300" href="" target="_blank">{item.name}</a>
+                            </div>
+                        })
+                    }
+                    <div className="col col-span-20 md:pt-2 pr-7 pl-2">
+                        <button class="py-1 px-3 bg-white hover:text-primary mb-3 transition duration-300 font-semibold rounded-lg" href="" target="_blank">
+                            Register
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div className="w-full h-[0.25px] bg bg-nav-links-unselected opacity-20"></div>
+            <div className="hidden lg:flex w-full h-[0.25px] bg bg-nav-links-unselected opacity-20"></div>
         </div>
-
     )
 }
 
