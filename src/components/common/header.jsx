@@ -1,31 +1,13 @@
 import { TiThMenu } from "react-icons/ti";
-import React, { useEffect, useState } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-AOS.init();
+import { IoIosClose } from 'react-icons/io';
+import { useState } from "react";
 
 const Header = () => {
-    const [show, setShow] = useState(false);
     const [burgerNav, setBurgerNav] = useState(false);
 
-    const transitionNav = () => {
-        if (window.scrollY > 200) {
-            setShow(true);
-        } else {
-            setShow(false);
-        }
-    };
-
-    function burgerNavController() {
+    const burgerNavController = () => {
         setBurgerNav(!burgerNav);
     }
-
-    useEffect(() => {
-        window.addEventListener("scroll", transitionNav);
-
-        //remove
-        return () => window.removeEventListener("scroll", transitionNav);
-    }, []);
 
     const navItems = [
         {
@@ -60,47 +42,15 @@ const Header = () => {
 
     return (
         <div>
-            <div className="flex flex-col md:flex-row justify-between bg-black p-2 md:p-2">
-                <div>
-                    <nav className='flex items-center z-80 px-3 py-3'>
-                        <TiThMenu
-                            data-aos="fade-down"
-                            data-aos-duration="1000"
-                            data-aos-offset="100"
-                            className="absolute h-8 w-8 text-[#ffffff] right-3 lg:hidden mt-2 mr-2"
-                            onClick={burgerNavController}
-                        />
-
-                        <ul
-                            className={
-                                burgerNav
-                                    ? "navbar-nav mr-auto flex-col flex items-center fixed inset-0 lg:bottom-full uppercase bg-black backdrop-blur-3xl gap-4 justify-center p-8 lg:hidden z-50 mt-11"
-                                    : "hidden"
-                            } 
-                        >
-                            <li>
-                                <div className="w-full">
-                                    <img src='/assets/bashaway-logo.svg' className="w-40 h-40" />
-                                </div>
-                                {
-                                    navItems.map((item) => {
-                                        return <div className="col col-span-20 pb-10">
-                                            <a className="text-white hover:text-primary mb-3 md:py-10 transition duration-300" href="" target="_blank">{item.name}</a>
-                                        </div>
-                                    })
-                                }
-                            </li>
-                        </ul>
-                    </nav>
+            <div className={`w-full flex flex-col md:flex-row justify-between bg-black/70 p-5 lg:p-1 fixed top-0 z-50 backdrop-blur-[5px]`}>
+                <div className=" w-full md:w-5/12 pl-2 md:pl-12 mt-1.5 lg:pt-[0.8rem]">
+                    <img src='/assets/bashaway-logo.svg' className="w-30 h-30" />
                 </div>
+                <div className="hidden lg:flex justify-between w-full xl:w-10/12 mt-2">
 
-                <div className="hidden lg:flex justify-between w-full">
-                    <div className=" w-full md:w-5/12 pl-0 md:pl-12 md:pt-3">
-                        <img src='/assets/bashaway-logo.svg' className="w-30 h-30" />
-                    </div>
                     {
                         navItems.map((item) => {
-                            return <div className="col col-span-20 md:pt-3">
+                            return <div className="md:pt-3">
                                 <a className="px-2 text-nav-links-unselected hover:text-primary mb-3 transition duration-300" href="" target="_blank">{item.name}</a>
                             </div>
                         })
@@ -111,6 +61,35 @@ const Header = () => {
                         </button>
                     </div>
                 </div>
+                <TiThMenu
+                    className="fixed top-0 h-8 w-8 text-white right-1 lg:hidden mt-5 lg:mt-4 mr-4 lg:mr-2 cursor-pointer"
+                    onClick={burgerNavController}
+                />
+            </div>
+            <div>
+                <nav className={`h-full w-full flex items-center fixed top-0 left-0 z-50 ${burgerNav ? 'pointer-events-auto' : 'pointer-events-none opacity-0'} bg-black/50 backdrop-blur-2xl transition duration-300`}>
+                    <IoIosClose
+                        className="fixed top-0 right-0 z-[60] h-14 w-14 text-white mt-2 mr-2 lg:hidden cursor-pointer"
+                        onClick={burgerNavController}
+                    />
+                    <ul
+                        className=" mr-auto w-full h-full flex-col flex items-center uppercase justify-center p-8 lg:hidden"
+
+                    >
+                        <li className=" h-full">
+                            <div className="w-full">
+                                <img src='/assets/bashaway-logo.svg' className="w-56 h-56" />
+                            </div>
+                            {
+                                navItems.map((item) => {
+                                    return <div className="w-full flex flex-col justify-center items-center">
+                                        <a className="w-full text-white hover:text-primary py-8 text-center transition duration-300" href="" target="_blank">{item.name}</a>
+                                    </div>
+                                })
+                            }
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <div className="hidden lg:flex w-full h-[0.25px] bg bg-nav-links-unselected opacity-20"></div>
         </div>
