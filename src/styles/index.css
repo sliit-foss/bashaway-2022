@@ -16,6 +16,20 @@ body {
   overflow-x: hidden !important;
 }
 
+html::-webkit-scrollbar {
+  width: 12px;
+  background-color: #000000;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: #0070F3;
+  border-radius: 2px;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background-color: #0076ff;
+}
+
 .light-sweep::before {
   content: attr(data-heading);
   position: absolute;
@@ -23,7 +37,7 @@ body {
   top: 0;
   width: 100%;
   padding: 1rem;
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255) 100% );
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255) 100% );
   -webkit-background-clip: text;
   color: transparent;
   animation: light-sweep 3.5s ease-in-out infinite;

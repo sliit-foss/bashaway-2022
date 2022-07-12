@@ -6,6 +6,7 @@ const Header = () => {
     const [burgerNav, setBurgerNav] = useState(false);
 
     const burgerNavController = () => {
+        document.querySelector('html').style.overflowY = !burgerNav ? "hidden" : "auto";
         setBurgerNav(!burgerNav);
     }
 
@@ -76,14 +77,14 @@ const Header = () => {
                         className=" mr-auto w-full h-full flex-col flex items-center uppercase justify-center p-8 lg:hidden"
 
                     >
-                        <li className=" h-full">
+                        <li className="h-full flex flex-col justify-between py-20">
                             <div className="w-full">
-                                <img src='/assets/bashaway-logo.svg' className="w-56 h-56" />
+                                <img src='/assets/bashaway-logo.svg' className="w-56 h-20" />
                             </div>
                             {
                                 navItems.map((item) => {
                                     return <div className="w-full flex flex-col justify-center items-center">
-                                        <a className="w-full text-white hover:text-primary py-8 text-center transition duration-300" href="" target="_blank">{item.name}</a>
+                                        <a className="w-full text-white hover:text-primary text-center transition duration-300" href="" target="_blank">{item.name}</a>
                                     </div>
                                 })
                             }

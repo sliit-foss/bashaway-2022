@@ -14,7 +14,6 @@ const Landing = () => {
     useEffect(() => {
         if (!vantaEffect) {
             const mediaQuery = window.matchMedia('(max-width: 768px)')
-            console.log(mediaQuery.matches )
             document.getElementById('vanta-placeholder').style.display = 'block'
             setVantaEffect(NET({
                 el: myRef.current,
