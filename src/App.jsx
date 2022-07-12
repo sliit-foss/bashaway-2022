@@ -1,22 +1,29 @@
-import { useState } from 'react'
-import logo from '../public/assets/logo.svg'
-import { Header } from './components/common'
-import { Footer } from './components/common'
-import { Register, Sponsors, Speakers, Prizes } from './components'
-import './styles/App.css'
+import { useEffect } from 'react'
+import Aos from 'aos'
+import 'aos/dist/aos.css'
+import { Header, Footer, Layout } from './components/common'
+import { Register, Sponsors, Speakers, Prizes, Rules, Timeline , Competition, Landing } from './components'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    Aos.init({ offset: 0, duration: 1500 })
+    window.addEventListener('load', Aos.refresh)
+  }, [])
 
   return (
-    <div className="App font-inter">
-      <Header/>
+    <Layout>
+      <Header />
+      <Landing />
+      <Timeline />
+      <Competition />
+      <Rules />
       <Prizes />
       <Speakers />
       <Sponsors />
       <Register />
       <Footer />
-    </div>
+    </Layout>
   )
 }
 

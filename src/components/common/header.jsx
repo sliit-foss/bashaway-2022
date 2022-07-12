@@ -2,9 +2,9 @@ import { TiThMenu } from "react-icons/ti";
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { GiHamburgerMenu } from 'react-icons/gi'
-// import AOS from "aos";
-// import "aos/dist/aos.css";
-// AOS.init();
+import AOS from "aos";
+import "aos/dist/aos.css";
+AOS.init();
 
 const Header = () => {
     const [show, setShow] = useState(false);
