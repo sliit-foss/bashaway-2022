@@ -1,7 +1,5 @@
 import { TiThMenu } from "react-icons/ti";
 import React, { useEffect, useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
-import { GiHamburgerMenu } from 'react-icons/gi'
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -69,14 +67,14 @@ const Header = () => {
                             data-aos="fade-down"
                             data-aos-duration="1000"
                             data-aos-offset="100"
-                            className="absolute h-8 w-8 text-[#ffffff] right-3 lg:hidden mt-3 mr-3"
+                            className="absolute h-8 w-8 text-[#ffffff] right-3 lg:hidden mt-2 mr-2"
                             onClick={burgerNavController}
                         />
 
                         <ul
                             className={
                                 burgerNav
-                                    ? "navbar-nav mr-auto flex-col flex items-center fixed inset-0 lg:bottom-full uppercase bg-black backdrop-blur-3xl gap-4 justify-center p-8 lg:hidden z-50 mt-12"
+                                    ? "navbar-nav mr-auto flex-col flex items-center fixed inset-0 lg:bottom-full uppercase bg-black backdrop-blur-3xl gap-4 justify-center p-8 lg:hidden z-50 mt-11"
                                     : "hidden"
                             } 
                         >
