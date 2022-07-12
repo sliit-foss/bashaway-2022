@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import { Header, Footer, Layout } from './components/common'
-import { Register, Sponsors, Speakers, Prizes, Rules, Timeline , Competition, Landing } from './components'
+import { Register, Sponsors, Speakers, Prizes, Rules, Timeline, Competition, Landing } from './components'
 
 function App() {
 

@@ -13,11 +13,13 @@ const Landing = () => {
 
     useEffect(() => {
         if (!vantaEffect) {
+            const mediaQuery = window.matchMedia('(max-width: 768px)')
             document.getElementById('vanta-placeholder').style.display = 'block'
             setVantaEffect(NET({
                 el: myRef.current,
                 color: '#0070F3',
-                backgroundColor: '#000000'
+                backgroundColor: '#000000',
+                maxDistance: mediaQuery.matches ? 12 : 20,
             }))
         }
         return () => {
