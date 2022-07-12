@@ -76,54 +76,39 @@ const Header = () => {
                         <ul
                             className={
                                 burgerNav
-                                    ? "navbar-nav mr-auto flex-col flex items-center fixed inset-0 bottom-16 uppercase bg-black backdrop-blur-3xl gap-4 justify-center p-8 lg:hidden z-50 "
+                                    ? "navbar-nav mr-auto flex-col flex items-center fixed inset-0 lg:bottom-full uppercase bg-black backdrop-blur-3xl gap-4 justify-center p-8 lg:hidden z-50 mt-12"
                                     : "hidden"
-                            }
+                            } 
                         >
-                            {/* <AiOutlineClose
-                                onClick={burgerNavController}
-                                className=" h-8 w-8 text-[#ffffff] font-extrabold z-30 lg:mr-48"
-                            /> */}
                             <li>
-                                <TiThMenu
-                                    data-aos="fade-down"
-                                    data-aos-duration="1000"
-                                    data-aos-offset="100"
-                                    className=" row row-span-20absolute h-8 w-8 text-[#ffffff] right-3 lg:hidden mt-3 mr-3 md:ml-[57rem] "
-                                    onClick={burgerNavController}
-                                />
-                            </li>
-                            <li>
-                                
                                 <div className="w-full">
                                     <img src='/assets/bashaway-logo.svg' className="w-40 h-40" />
                                 </div>
                                 {
                                     navItems.map((item) => {
-                                        return <div className="col col-span-20 md:pb-10">
+                                        return <div className="col col-span-20 pb-10">
                                             <a className="text-white hover:text-primary mb-3 md:py-10 transition duration-300" href="" target="_blank">{item.name}</a>
                                         </div>
                                     })
                                 }
                             </li>
-
                         </ul>
                     </nav>
                 </div>
 
                 <div className="hidden lg:flex justify-between w-full">
                     <div className=" w-full md:w-5/12 pl-0 md:pl-12 md:pt-3">
-                        <img src='/assets/bashaway-logo.svg' className="hidden md:flex w-30 h-30" />
+                        <img src='/assets/bashaway-logo.svg' className="w-30 h-30" />
                     </div>
                     {
                         navItems.map((item) => {
                             return <div className="col col-span-20 md:pt-3">
-                                <a className="hidden md:flex px-2 text-nav-links-unselected hover:text-primary mb-3 transition duration-300" href="" target="_blank">{item.name}</a>
+                                <a className="px-2 text-nav-links-unselected hover:text-primary mb-3 transition duration-300" href="" target="_blank">{item.name}</a>
                             </div>
                         })
                     }
                     <div className="col col-span-20 md:pt-2 pr-7 pl-2">
-                        <button class="hidden md:flex py-1 px-3 bg-white hover:text-primary mb-3 transition duration-300 font-semibold rounded-lg" href="" target="_blank">
+                        <button class="py-1 px-3 bg-white hover:text-primary mb-3 transition duration-300 font-semibold rounded-lg" href="" target="_blank">
                             Register
                         </button>
                     </div>
