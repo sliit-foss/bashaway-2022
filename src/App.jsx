@@ -12,7 +12,7 @@ import {
   Competition,
   Landing,
 } from "./components";
-
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 export const RegistrationOpenContext = createContext({});
 
 function App() {
@@ -27,22 +27,38 @@ function App() {
   }, []);
 
   return (
-    <Layout>
-      <RegistrationOpenContext.Provider
-        value={{ registration, setRegistration }}
-      >
-        <Header />
-        <Landing />
-        <Timeline />
-        <Competition />
-        <Rules />
-        {/* <Prizes /> */}
-        <Speakers />
-        {/* <Sponsors /> */}
-        <Register />
-        <Footer />
-      </RegistrationOpenContext.Provider>
-    </Layout>
+    <RegistrationOpenContext.Provider
+    value={{ registration, setRegistration }}
+  >
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/"  element={<Landing/>}/>
+        <Route path="/timeline"  element={<Timeline />}/>
+        <Route path="/competition"  element={<Competition />}/>
+        <Route path="/rules"  element={<Rules />}/>
+        <Route path="/speakers"  element={<Speakers />}/>
+        <Route path="/register"  element={ <Register />}/>
+      </Routes>
+      <Footer />
+    </Router>
+    </RegistrationOpenContext.Provider>
+    // <Layout>
+      // <RegistrationOpenContext.Provider
+      //   value={{ registration, setRegistration }}
+      // >
+    //     <Header />
+    //     <Landing />
+    //     <Timeline />
+    //     <Competition />
+    //     <Rules />
+    //     {/* <Prizes /> */}
+    //     <Speakers />
+    //     {/* <Sponsors /> */}
+    //     <Register />
+    //     <Footer />
+      // </RegistrationOpenContext.Provider>
+    // </Layout>
   );
 }
 

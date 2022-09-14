@@ -2,6 +2,7 @@ import { TiThMenu } from "react-icons/ti";
 import { IoIosClose } from "react-icons/io";
 import { useState, useContext } from "react";
 import { RegistrationOpenContext } from "../../App";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const { registration } = useContext(RegistrationOpenContext);
@@ -27,19 +28,19 @@ const Header = () => {
   const navItems = [
     {
       name: "Timeline",
-      path: "timeline",
+      path: "/timeline",
     },
     {
       name: "Competition",
-      path: "competition",
+      path: "/competition",
     },
     {
       name: "Rules",
-      path: "rules",
+      path: "/rules",
     },
     {
       name: "Speakers",
-      path: "speakers",
+      path: "/speakers",
     },
     // make avialable after sponsors are finalized
     // {
