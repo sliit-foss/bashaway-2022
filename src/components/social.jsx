@@ -31,7 +31,7 @@ export function Social() {
                 document.querySelector("html").style.overflowY = "hidden";
                 setShowModal(true)
             }} className="group flex justify-center items-center rounded-full p-1 overflow-hidden bg-[#25D366] transition-all">
-                <div className="w-0 h-0 overflow-hidden whitespace-nowrap group-hover:ml-5 group-hover:h-auto group-hover:w-auto transition-all">Join on Whatsapp</div>
+                <div className="w-0 h-0 overflow-hidden transition-all whitespace-nowrap group-hover:ml-5 group-hover:h-auto group-hover:w-auto">Join on Whatsapp</div>
                 <BsWhatsapp className="p-4" size={64} />
             </button>
             <WhatsappModal showModal={showModal} toggleShow={setShowModal} />
@@ -49,17 +49,17 @@ export function WhatsappModal({ showModal, toggleShow }) {
     return (
         <Portal>
             <div className={`fixed w-screen h-screen top-0 left-0 backdrop-blur-2xl z-[99999] font-inter transition-all duration-300 ${showModal ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-                <button onClick={_onClose} className="text-white absolute top-0 p-2 right-0">
+                <button onClick={_onClose} className="absolute top-0 right-0 p-2 text-white">
                     <IoIosClose
-                        className="h-14 w-14 text-white cursor-pointer"
+                        className="text-white cursor-pointer h-14 w-14"
                     />
                 </button>
-                <div className="flex flex-col justify-center items-center w-full h-full text-white">
-                    <div className="bold text-xl mb-10 font-semibold text-center">Join the WhatsApp group <br></br> To be up-to-date on the competition</div>
+                <div className="flex flex-col items-center justify-center w-full h-full text-white">
+                    <div className="mb-10 text-xl font-semibold text-center bold">Join the WhatsApp group <br></br> To be up-to-date on the competition</div>
                     <div className="w-[18em] border-[10px] border-white">
                         <img src="/assets/whatsapp-qr.png" alt="Whatsapp QR"></img>
                     </div>
-                    <div className="mt-4">Scan the QR or click <a href="https://bit.ly/3BATIQB" className="hover:font-bold underline">here</a></div>
+                    <div className="mt-4">Scan the QR or click <a href="https://chat.whatsapp.com/LYR1sVncCWX5ABRvwM8ilu" className="underline hover:font-bold" target="_blank">here</a></div>
                     <div className="mt-10">
                         <img src="/assets/bashaway-logo.svg" className="w-30" />
                     </div>
